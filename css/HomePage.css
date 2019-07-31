@@ -1,0 +1,78 @@
+html,
+body {
+    height: 100%;
+}
+
+#index {
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: 0px auto;
+}
+/* public-css -> 公用样式 */
+#index .hover-red:hover{
+    color: red;
+}
+/* head-nav -> 头部导航 */
+#head-nav{
+    height: 30px;
+}
+#head-nav .head-nav{
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.head-nav .left span{
+    color: #bbb;
+    margin-right: 15px;
+}
+.head-nav .left a{
+    background: url(../images/homepage/icon-xx.png) no-repeat left center;
+    padding-left: 12px;
+}
+.head-nav .right ul{
+    display: flex;
+}
+.head-nav .right ul li {
+    padding: 0px 15px;
+    background: url(../images/homepage/line-l.png) no-repeat right center;
+}
+.head-nav .right ul li a{
+    color: #4b4b4b;
+}
+.head-nav .right ul li span{
+    background: url(../images/homepage/icon-erwm.png) no-repeat left center;
+    color: #666;
+    padding:0 15px 0 17px;
+}
+#head-nav .head-nav .right ul li:last-child{
+    position: relative;
+}
+#head-nav .head-nav .right ul li:last-child span:hover+p{
+    display: block;
+}
+#head-nav .head-nav .right ul li:last-child a{
+    color: #008000;
+}
+#head-nav .head-nav .right ul li:last-child p{
+    position: absolute;
+    right: 13px;
+    top: 20px;
+    display: none;
+    background-color: #fff;
+}
+/* head-carousel -> 头部轮播 */
+#head-carousel{
+    height: 118px;
+}
+#head-carousel a{
+    height: 100%;
+    display: block;
+    background: url(../images/homepage/672a714a519a4bf38a4f92d2628d2b6c.jpg) no-repeat center center;
+}
