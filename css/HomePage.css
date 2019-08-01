@@ -13,72 +13,212 @@ body {
     height: 100%;
     margin: 0px auto;
 }
+
 /* public-css -> 公用样式 */
-#index .hover-red:hover{
-    color: red;
+#index .hover-red:hover {
+    color: red !important;
 }
+
 /* head-nav -> 头部导航 */
-#head-nav{
+#head-nav {
     height: 30px;
 }
-#head-nav .head-nav{
+
+#head-nav .head-nav {
     font-size: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
-.head-nav .left span{
+
+.head-nav .left span {
     color: #bbb;
     margin-right: 15px;
 }
-.head-nav .left a{
+
+.head-nav .left a {
     background: url(../images/homepage/icon-xx.png) no-repeat left center;
     padding-left: 12px;
 }
-.head-nav .right ul{
+
+.head-nav .right ul {
     display: flex;
 }
+
 .head-nav .right ul li {
     padding: 0px 15px;
     background: url(../images/homepage/line-l.png) no-repeat right center;
 }
-.head-nav .right ul li a{
+
+.head-nav .right ul li a {
     color: #4b4b4b;
 }
-.head-nav .right ul li span{
+
+.head-nav .right ul li span {
     background: url(../images/homepage/icon-erwm.png) no-repeat left center;
     color: #666;
-    padding:0 15px 0 17px;
+    padding: 0 15px 0 17px;
 }
-#head-nav .head-nav .right ul li:last-child{
+
+#head-nav .head-nav .right ul li:last-child {
     position: relative;
 }
-#head-nav .head-nav .right ul li:last-child span:hover+p{
+
+#head-nav .head-nav .right ul li:last-child span:hover+p {
     display: block;
 }
-#head-nav .head-nav .right ul li:last-child a{
+
+#head-nav .head-nav .right ul li:last-child a {
     color: #008000;
 }
-#head-nav .head-nav .right ul li:last-child p{
+
+#head-nav .head-nav .right ul li:last-child p {
     position: absolute;
     right: 13px;
     top: 20px;
     display: none;
     background-color: #fff;
 }
+
 /* head-carousel -> 头部轮播 */
-#head-carousel{
+#head-carousel {
     height: 118px;
 }
-#head-carousel a:first-child{
+
+#head-carousel a:first-child {
     height: 100%;
     display: block;
     background: url(../images/homepage/672a714a519a4bf38a4f92d2628d2b6c.jpg) no-repeat center center;
 }
-#head-carousel a:last-child{
+
+#head-carousel a:last-child {
     height: 100%;
     display: block;
     background: url(../images/homepage/18d24115d93d4a79a390a3cada7bf126.jpg) no-repeat center center;
     display: none;
+}
+
+/* head -> 头部主要内容 */
+#head {
+    height: 100px;
+}
+
+#head .head {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#head .head a:first-child {
+    width: 320px;
+}
+
+#head .head .input{
+    display: flex;
+    flex-wrap: wrap;
+    width: 516px;
+}
+#head .head .input .input-top input[type="text"] {
+    height: 30px;
+    width: 440px;
+    color: #666;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+#head .head .input .input-top input[type="button"] {
+    height: 30px;
+    width: 76px;
+    background-color: #fb1116;
+    border: none;
+    margin-left: -5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+#head .head .input .input-buttom{
+    margin-top: 5px;
+}
+#head .head .input .input-buttom ul{
+    display: flex;
+    font-size: 12px;
+}
+#head .head .input .input-buttom ul li {
+    margin: 0px 10px;
+}
+#head .head .input .input-buttom ul li a{
+    color: #5a5a5a;
+}
+#head .head .shop {
+    width: 120px;
+    height: 30px;
+    background: #fbfbfb;
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    position: relative;
+    padding: 0px 13px;
+    box-sizing: border-box;
+    margin-right: 45px;
+}
+
+#head .head .shop p {
+    width: 15px;
+    height: 15px;
+    background-color: #fb1116;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 14px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    color: #fff;
+}
+
+#head .head .shop a {
+    font-size: 12px;
+    color: #4b4b4b;
+    margin-left: 5px;
+}
+
+#head .head a:last-child img {
+    width: 70px;
+    height: 70px;
+}
+/* header-nav -> 头部主要导航 */
+#header-nav{
+    height: 33px;
+}
+#header-nav .header-nav{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+#header-nav .header-nav p{
+    width: 195px;
+    background-color: #fb1116;
+    height: 100%;
+    color: #fff;
+    font-size: 13px;
+    text-indent: 20px;
+    line-height: 33px;
+}
+#header-nav .header-nav ul{
+    display: flex;
+    font-size: 14px;
+    font-weight: 900;
+    margin-left: 57px;
+    margin-right: 188px;
+}
+#header-nav .header-nav ul li {
+    margin: 0px 12px;
+}
+#header-nav .header-nav ul li a{
+    color: #4b4b4b;
+}
+#header-nav .header-nav span{
+    font-size: 12px;
+    margin-top: -25px;
 }
