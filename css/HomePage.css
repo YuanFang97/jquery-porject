@@ -71,8 +71,14 @@ body {
 #head-carousel{
     height: 118px;
 }
-#head-carousel a{
+#head-carousel a:first-child{
     height: 100%;
     display: block;
     background: url(../images/homepage/672a714a519a4bf38a4f92d2628d2b6c.jpg) no-repeat center center;
+}
+#head-carousel a:last-child{
+    height: 100%;
+    display: block;
+    background: url(../images/homepage/18d24115d93d4a79a390a3cada7bf126.jpg) no-repeat center center;
+    display: none;
 }
