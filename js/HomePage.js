@@ -41,7 +41,7 @@ $(function () {
             });
         }
         if (height >= 60) {
-            $(".sidebar-service>a").css("top", "52x0px");
+            $(".sidebar-service>a").css("top", "520px");
             $(".sidebar-service>p").css("top", "520px");
             $(".sidebar-hotLine>a").css("top", "560px");
             $(".sidebar-hotLine>p").css("top", "560px");
@@ -95,6 +95,7 @@ $(function () {
             $(this).parent().siblings().children("span").css("background-color", "#fff")
             $(this).css("background-color", "#ccc");
             let id = parseInt($(this).attr("calss")) - 1;
+            // 渲染none-nav的数据
             $.ajax({
                 type: "post",
                 url: "../public/nav.json",
@@ -132,7 +133,6 @@ $(function () {
             });
         }, function () {
             $(this).css("background-color", "#fff");
-            // $(".none-nav").css("display","none");
         })
     })
 })

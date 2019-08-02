@@ -221,7 +221,7 @@ body {
 }
 
 #header-nav .header-nav .left-nav .nav {
-    width: 924px;
+    width: 995px;
     height: 468px;
     position: absolute;
     top: 33px;
@@ -274,7 +274,7 @@ body {
     border: none;
 }
 #header-nav .header-nav .left-nav .nav .none-nav {
-    width: 729px;
+    width: 850px;
     background-color: #fff;
     height: 100%;
     border-left: 1px solid #ccc;
@@ -350,7 +350,7 @@ body {
     position: absolute;
     top: 42px;
     z-index: 9;
-    left: -210px;
+    right: -19px;
 }
 
 /* banner -> 轮播图区域 */
@@ -640,4 +640,13 @@ body {
 
 #sidebar .sidebar-goTop a:hover {
     background-color: orange;
+}
+/* new-arrivals -> 新品上市 */
+#new-arrivals{
+    margin-top: 17px;
+    height: 435px;
+}
+#new-arrivals .new-arrivals .top ul {
+    display: flex;
+    justify-content: space-between;
 }
