@@ -34,8 +34,20 @@ $(function () {
         }else{
             $("#sidebar").css({"height":"100%","top":30-height});
         }
-        if(height >= 60){
-            $()
+        if(height >= 10){
+            $(".sidebar-service>a").css("top","530px");
+            $(".sidebar-service>p").css("top","530px");
+            $(".sidebar-hotLine>a").css("top","560px");
+            $(".sidebar-hotLine>p").css("top","560px");
+            $(".sidebar-qr>a").css("display","block");
+            $(".sidebar-goTop>a").css("display","block");
+        }else{
+            $(".sidebar-service>a").css("top","600px");
+            $(".sidebar-service>p").css("top","600px");
+            $(".sidebar-hotLine>a").css("top","640px");
+            $(".sidebar-hotLine>p").css("top","640px");
+            $(".sidebar-qr>a").css("display","none");
+            $(".sidebar-goTop>a").css("display","none");
         }
     })
     // 侧边栏一系列动画效果
