@@ -3,19 +3,24 @@ header("content-type:text/html;charset=utf-8");
 
 $con = mysqli_connect("127.0.0.1","root","","jquery-porject");
 
-$json = file_get_contents("list.json");
+$json = file_get_contents("text.json");
 
 $data = json_decode($json,true);
 
 for($i = 0; $i < count($data);$i++)
 {   
-    $id = $data[$i]["id"];
-    $title = $data[$i]["title"];
-    $list1 = $data[$i]["list1"];
-    $list2 = $data[$i]["list2"];
-    $list3 = $data[$i]["list3"];
-    $list4 = $data[$i]["list4"];
-    $sql = "INSERT INTO `jquery-porject`.`nav-list` (`id`,`title`, `list1`, `list2`, `list3`, `list4`) VALUES ('$id','$title', '$list1', '$list2', '$list3', '$list4')";
+    $bgImg = $data[$i]["bgImg"];
+    $mainImg = $data[$i]["mainImg"];
+    $rightImg = $data[$i]["rightImg"];
+    $li1 = $data[$i]["li1"];
+    $li2 = $data[$i]["li2"];
+    $li3 = $data[$i]["li3"];
+    $li4 = $data[$i]["li4"];
+    $li5 = $data[$i]["li5"];
+    $li6 = $data[$i]["li6"];
+    $liBgC = $data[$i]["liBgC"];
+    $liBorderC = $data[$i]["liBorderC"];
+    $sql = "INSERT INTO `jquery-porject`.`classifylist-top` (`bgImg`, `mainImg`, `rightImg`, `li1`, `li2`, `li3`, `li4`, `li5`, `li6`, `liBgC`, `liBorderC`) VALUES ('$bgImg', '$mainImg', '$rightImg', '$li1', '$li2', '$li3', '$li4', '$li5', '$li6', '$liBgC', '$liBorderC')";
     mysqli_query($con,$sql);
 }
 ?>

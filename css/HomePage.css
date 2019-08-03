@@ -234,9 +234,11 @@ body {
     background-color: #fff;
     height: 100%;
 }
-#header-nav .header-nav .left-nav .nav .block-nav:hover+.none-nav{
+
+#header-nav .header-nav .left-nav .nav .block-nav:hover+.none-nav {
     display: block;
 }
+
 #header-nav .header-nav .left-nav .nav .block-nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -270,9 +272,11 @@ body {
     margin-right: 5px;
     color: #888;
 }
-#header-nav .header-nav .left-nav .nav .block-nav ul li span>p a:first-child{
+
+#header-nav .header-nav .left-nav .nav .block-nav ul li span>p a:first-child {
     border: none;
 }
+
 #header-nav .header-nav .left-nav .nav .none-nav {
     width: 850px;
     background-color: #fff;
@@ -280,32 +284,38 @@ body {
     border-left: 1px solid #ccc;
     display: none;
 }
-#header-nav .header-nav .left-nav .nav .none-nav:hover{
+
+#header-nav .header-nav .left-nav .nav .none-nav:hover {
     display: block;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl {
     display: flex;
     height: 38.4px;
     padding: 5px 0;
     align-items: center;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl dt{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl dt {
     width: 120px;
     line-height: 38px;
     height: 38px;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl dt a{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl dt a {
     font-size: 13px;
     color: #555;
     font-weight: 900;
     padding-left: 10px;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl dt a i{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl dt a i {
     font-size: 14px;
     color: #555;
     float: right;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl dd{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl dd {
     width: 465px;
     border-bottom: 1px dashed #ccc;
     display: flex;
@@ -313,7 +323,8 @@ body {
     align-items: center;
     height: 39.4px;
 }
-#header-nav .header-nav .left-nav .nav .none-nav dl dd a{
+
+#header-nav .header-nav .left-nav .nav .none-nav dl dd a {
     font-size: 12px;
     color: #666;
     padding: 0px 10px;
@@ -321,6 +332,7 @@ body {
     line-height: 12px;
     border-left: 1px solid #ccc;
 }
+
 #header-nav .header-nav ul {
     display: flex;
     font-size: 14px;
@@ -641,12 +653,245 @@ body {
 #sidebar .sidebar-goTop a:hover {
     background-color: orange;
 }
+
 /* new-arrivals -> 新品上市 */
-#new-arrivals{
+#new-arrivals {
     margin-top: 17px;
     height: 435px;
 }
+
 #new-arrivals .new-arrivals .top ul {
     display: flex;
     justify-content: space-between;
+}
+
+#new-arrivals .new-arrivals .buttom {
+    display: flex;
+    margin-top: 12px;
+}
+
+#new-arrivals .new-arrivals .buttom>img {
+    width: 200px;
+    height: 320px;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a i img {
+    width: 190px;
+    height: 190px;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a span {
+    font-size: 14px;
+    color: #4b4b4b;
+    display: block;
+    width: 80%;
+    margin-top: 10px;
+    height: 40px;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a span:last-child {
+    display: flex;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #fb1116;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a span em {
+    color: #fff;
+    font-weight: 900;
+    background-color: #fb1116;
+    font-size: 17px;
+    flex: 1;
+}
+
+#new-arrivals .new-arrivals .buttom .list div a span i {
+    flex: 1;
+    font-size: 15px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/*  */
+/* cutting-line -> 分割线 */
+#cutting-line {
+    padding: 40px 0px 30px 0px;
+}
+
+#cutting-line .cutting-line h3 {
+    height: 48px;
+    color: #333;
+    font-size: 33px;
+    width: 100%;
+    text-align: center;
+    background: url(../images/homepage/bj-tt.png) no-repeat center center;
+}
+
+#cutting-line .cutting-line p {
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 12px;
+    color: #fb1116;
+}
+
+#cutting-line .cutting-line i {
+    color: #04ae00;
+    padding-right: 5px;
+}
+
+/* 商品 */
+#goods {}
+
+#goods .goods {
+    height: 910px;
+}
+
+#goods .goods:nth-child(1) {
+    background: url(../images/homepage/ht_bj01.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(2) {
+    background: url(../images/homepage/ht_bj02.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(3) {
+    background: url(../images/homepage/ht_bj03.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(4) {
+    background: url(../images/homepage/ht_bj04.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(5) {
+    background: url(../images/homepage/ht_bj05.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(6) {
+    background: url(../images/homepage/ht_bj06.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(7) {
+    background: url(../images/homepage/ht_bj07.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(8) {
+    background: url(../images/homepage/ht_bj08.jpg) no-repeat bottom center;
+}
+
+#goods .goods:nth-child(9) {
+    background: url(../images/homepage/ht_bj09.jpg) no-repeat bottom center;
+}
+
+/* #goods .goods .goods-list{
+    border: 1px solid red;
+    height: 910px;
+} */
+/* goods-listNav */
+#goods .goods .goods-list .goods-listNav {
+    height: 301px;
+    /* background: url(../images/homepage/ht_01.jpg) no-repeat center center; */
+    display: flex;
+}
+
+#goods .goods .goods-list .goods-listNav ul {
+    display: flex;
+    width: 248px;
+    height: 251.6px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-top: 125px;
+    box-sizing: border-box;
+}
+
+#goods .goods .goods-list .goods-listNav ul li {
+    height: 27px;
+    width: 60px;
+    margin: 5px 5px 0px 15px;
+    border-radius: 10px;
+}
+
+#goods .goods .goods-list .goods-listNav ul li a {
+    font-size: 12px;
+    color: #fff;
+    padding-left: 5px;
+}
+
+#goods .goods .goods-list .goods-listNav .main-img a img {
+    width: 610px;
+    height: 301px;
+}
+
+#goods .goods .goods-list .goods-listNav .right-img {
+    position: relative;
+}
+
+#goods .goods .goods-list .goods-listNav .right-img a:last-child {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 14px;
+}
+
+/* 商品 */
+#goods .goods .goods-list .goods-listShop ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+#goods .goods .goods-list .goods-listShop ul li {
+    width: 200px;
+    height: 258.6px;
+    padding: 8px 0px;
+}
+
+#goods .goods .goods-list .goods-listShop ul li div a img {
+    width: 180px;
+    height: 180px;
+    padding-bottom: 10px;
+}
+
+#goods .goods .goods-list .goods-listShop ul li p {
+    width: 195px;
+    height: 78.6px;
+    margin: 0 2.5px;
+    padding: 8px 0px 8px 15px;
+}
+
+#goods .goods .goods-list .goods-listShop ul li p em {
+    width: 180px;
+    height: 30px;
+    display: block;
+}
+
+#goods .goods .goods-list .goods-listShop ul li p em a {
+    font-size: 14px;
+    color: #4b4b4b;
+    width: 180px;
+    display: block;
+    overflow: hidden;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#goods .goods .goods-list .goods-listShop ul li p span {
+    width: 180px;
+    height: 32.6px;
+    color: #EF3F3B;
+    font-size: 19px;
+    padding: 10px 0px 5px;
+}
+
+#goods .goods .goods-list .goods-listShop ul li p span i:last-child {
+    color: #4b4b4b;
+    font-size: 14px;
+    padding-left: 60px;
+    text-decoration: line-through;
 }

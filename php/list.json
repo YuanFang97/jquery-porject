@@ -1,64 +1,51 @@
 [{
-    "id": 1,
-    "title": "新鲜水果",
-    "list1": "樱桃",
-    "list2": "葡萄",
-    "list3": "桃子",
-    "list4": "杨梅"
+    "img": "http://oss.egu365.com/upload/48a3895dea324ce8a0288997fa384eb4.jpg",
+    "title": "甘美西瓜1个装（6.5-7.5斤）",
+    "currentPrice": "￥ 66.8",
+    "originalCost": "￥ 78"
 }, {
-    "id": 2,
-    "title": "绿色菜篮",
-    "list1": "小龙虾",
-    "list2": "鳗鱼",
-    "list3": "牛肉",
-    "list4": "肉丸"
+    "img": "http://oss.egu365.com/upload/7477b53c3ca94c2ba561a76af6c40f2b.jpg",
+    "title": "山东黄金桃2kg",
+    "currentPrice": "￥ 58",
+    "originalCost": "￥ 78"
 }, {
-    "id": 3,
-    "title": "粮油调味",
-    "list1": "东北米",
-    "list2": "杂粮",
-    "list3": "面粉",
-    "list4": "海底捞料"
+    "img": "http://oss.egu365.com/upload/9e945d4c6e514366be05bc54fdf1a934.jpg",
+    "title": "陕西渭南新鲜核桃2kg",
+    "currentPrice": "￥ 88",
+    "originalCost": "￥ 108"
 }, {
-    "id": 4,
-    "title": "干货特产",
-    "list1": "黑木耳",
-    "list2": "虫草花",
-    "list3": "红糖",
-    "list4": "枸杞"
+    "img": "http://oss.egu365.com/upload/d07c43d18be94dd6894482f67e1c41fa.jpg",
+    "title": "新西兰乐琪苹果350g/桶",
+    "currentPrice": "￥ 58",
+    "originalCost": "￥ 79.8"
 }, {
-    "id": 5,
-    "title": "零食饮料",
-    "list1": "千层",
-    "list2": "曲奇",
-    "list3": "坚果",
-    "list4": "肉干"
+    "img": "http://oss.egu365.com/upload/482e5fee9b0f46429b350e789f1788e3.jpg",
+    "title": "八马柑普茶礼盒装（6颗）200g",
+    "currentPrice": "￥ 380",
+    "originalCost": "￥ 430"
 }, {
-    "id": 6,
-    "title": "美酒茗茶",
-    "list1": "白葡萄酒",
-    "list2": "啤酒",
-    "list3": "特曲",
-    "list4": "大红袍"
+    "img": "http://oss.egu365.com/upload/37d92e83580c4123a0daa1b9c9ff4fab.jpg",
+    "title": "吉利树特级初榨橄榄油500ml*2金装礼盒（赠品下单默认赠送）",
+    "currentPrice": "￥ 188",
+    "originalCost": "￥ 284.00"
 }, {
-    "id": 7,
-    "title": "礼品礼券",
-    "list1": "鱼翅",
-    "list2": "灵芝",
-    "list3": "石斛",
-    "list4": "花胶"
+    "img": "http://oss.egu365.com/upload/bcba215142e94f65ae53ba087b4608f2.jpg",
+    "title": "陕北吴堡县手工空心面200g（新旧批次随机发货）",
+    "currentPrice": "￥ 35",
+    "originalCost": "￥ 100.00"
 }, {
-    "id": 8,
-    "title": "家居厨卫",
-    "list1": "漫威系列",
-    "list2": "被子",
-    "list3": "行李箱",
-    "list4": "保鲜盒"
+    "img": "http://oss.egu365.com/upload/20180903190123015.jpg",
+    "title": "美心流心奶黄月饼360g",
+    "currentPrice": "￥ 328",
+    "originalCost": "￥ 348"
 }, {
-    "id": 9,
-    "title": "创意家电",
-    "list1": "吹风机",
-    "list2": "人体秤",
-    "list3": "搅拌器",
-    "list4": "烤箱"
+    "img": "http://oss.egu365.com/upload/201810170954478047.jpg",
+    "title": "四川雅安红心奇异果（22-25枚）",
+    "currentPrice": "￥ 98",
+    "originalCost": "￥ 118"
+}, {
+    "img": "http://oss.egu365.com/upload/3492e145400643e0a2d5ba3fef6e115b.jpg",
+    "title": "新疆天山9818哈密瓜4.5kg",
+    "currentPrice": "￥ 168",
+    "originalCost": "￥ 188.9"
 }]
