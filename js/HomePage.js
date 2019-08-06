@@ -113,7 +113,7 @@ $(function () {
                     return `
                         <li>
                             <span calss="${ele.id}">
-                                <a href="">${ele.title}</a>
+                                <a href="./ListPage.html?cate=00${ele.id}">${ele.title}</a>
                                 <p>
                                     <a href="">${ele.list1}</a>
                                     <a href="">${ele.list2}</a>
