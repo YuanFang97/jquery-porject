@@ -82,34 +82,6 @@ $(function () {
         });
         $(".nav-none").hide();
     })
-    // 分类导航
-    $(".main-buttomNav").on("click", "a", function (e) {
-        $(".main-buttomNav>dl>dd>a").removeClass("color");
-        $(this).addClass("color");
-        return false;
-    })
-    $(".main-buttomNav>dl>dt").css("display", "block");
-    for (let i = 0; i < 5; i++) {
-        $($($(".main-buttomNav>dl>dt")[0]).siblings("dd")[i]).css("display", "block");
-        $($($(".main-buttomNav>dl>dt")[1]).siblings("dd")[i]).css("display", "block");
-        $($($(".main-buttomNav>dl>dt")[2]).siblings("dd")[i]).css("display", "block");
-    }
-    $(".main-buttomNav>.buttom>a").click(function () {
-        $(".main-buttomNav>dl>dd").css("display", "block");
-        $(".main-buttomNav>.buttom").css("display", "none")
-    })
-    // 商品
-    $(".goodsList>ul>li:lt(20)").css("display", "block");
-    let num = 20;
-    $(".more").click(function () {
-        num = num + 20;
-        $(`.goodsList>ul>li:lt(${num})`).css("display", "block");
-        let liLength = $(".goodsList>ul>li").length - 1;
-        let red = $(`.goodsList>ul>li:eq(${liLength})`).css("display");
-        if (red == "block") {
-            $(".more").css("display", "none")
-        }
-    })
     // 根据url数据改变页面标签内容和样式
     $(`.main-topNav>ul>li:eq(${urlCate})`).css("background-color", `${attrColor[urlCate]}`);
     $(".goods-leftNav>p>a:eq(1)").text(res);
@@ -159,12 +131,12 @@ $(function () {
                         <h4>${ele.title}</h4>
                     </dt>
                     <dd>
-                        <a href="">${ele.list[0]}</a>
-                        <a href="">${ele.list[1]}</a>
-                        <a href="">${ele.list[2]}</a>
-                        <a href="">${ele.list[3]}</a>
-                        <a href="">${ele.list[4]}</a>
-                        <a href="">${ele.list[5]}</a>
+                        <a href="" class="hover-red">${ele.list[0]}</a>
+                        <a href="" class="hover-red">${ele.list[1]}</a>
+                        <a href="" class="hover-red">${ele.list[2]}</a>
+                        <a href="" class="hover-red">${ele.list[3]}</a>
+                        <a href="" class="hover-red">${ele.list[4]}</a>
+                        <a href="" class="hover-red">${ele.list[5]}</a>
                     </dd>
                 </dl>
                     `
@@ -173,5 +145,114 @@ $(function () {
                 $("a:contains(undefined)").remove();
             }
         });
-    })
+    });
+    // 渲染筛选选项卡
+    $.ajax({
+        type: "post",
+        url: "../public/filtrate.json",
+        dataType: "json",
+        success: function (response) {
+            let size = response[urlCate].size;
+            let sizeHtml = size.map(ele => {
+                return `
+                <dd>
+                    <a href="" class="hover-green">${ele}</a>
+                </dd> 
+                `
+            }).join("");
+            $(".oneDl").append(sizeHtml);
+            let brand = response[urlCate].brand;
+            let brandHtml = brand.map(ele => {
+                return `
+                <dd>
+                    <a href="" class="hover-green">${ele}</a>
+                </dd> 
+                `
+            }).join("");
+            $(".towDl").append(brandHtml);
+            let place = response[urlCate].place;
+            let placeHtml = place.map(ele => {
+                return `
+                <dd>
+                    <a href="" class="hover-green">${ele}</a>
+                </dd> 
+                `
+            }).join("");
+            $(".threeDl").append(placeHtml);
+            // 分类导航
+            $(".main-buttomNav").on("click", "a", function (e) {
+                $(".main-buttomNav>dl>dd>a").removeClass("color");
+                $(this).addClass("color");
+                return false;
+            })
+            $(".main-buttomNav>dl>dt").css("display", "block");
+            for (let i = 0; i < 5; i++) {
+                $($($(".main-buttomNav>dl>dt")[0]).siblings("dd")[i]).css("display", "block");
+                $($($(".main-buttomNav>dl>dt")[1]).siblings("dd")[i]).css("display", "block");
+                $($($(".main-buttomNav>dl>dt")[2]).siblings("dd")[i]).css("display", "block");
+            }
+            $(".main-buttomNav>.buttom>a").click(function () {
+                $(".main-buttomNav>dl>dd").css("display", "block");
+                $(".main-buttomNav>.buttom").css("display", "none")
+            })
+        }
+    });
+    // 渲染商品数据
+    $.ajax({
+        type: "post",
+        url: "../php/ListPage.php",
+        data: `classify=${urlCate + 1}`,
+        dataType: "json",
+        success: function (response) {
+            let goodslist = response.map(ele => {
+                return `
+                <li class="${ele.id}">
+                    <span>
+                        <a href="./DetailPage.html?id=${ele.id}">
+                            <img src="${ele.imgurl}" alt="">
+                        </a>
+                    </span>
+                    <span>
+                        <em>${ele.price}</em>
+                    </span>
+                    <span>
+                        <a href="">${ele.title}</a>
+                        <i>${ele.explain}</i>
+                    </span>
+                    <p>
+                        <font>自 营</font>
+                        <em>深圳平湖仓</em>
+                        <em>同城速递</em>
+                    </p>
+                    <div>
+                        <div>
+                            <a href="">
+                                <i>-</i>
+                            </a>
+                            <input value="1" maxlength="2">
+                            <a href="">
+                                <i>+</i>
+                            </a>
+                        </div>
+                        <a href="" class="hover-green">加入购物车</a>
+                    </div>
+                </li>
+            
+                `
+            }).join("");
+            $(".res").html(goodslist);
+            // 商品
+            $(".goodsList>ul>li:lt(20)").css("display", "block");
+            let num = 20;
+            $(".more").click(function () {
+                num = num + 20;
+                $(`.goodsList>ul>li:lt(${num})`).css("display", "block");
+                let liLength = $(".goodsList>ul>li").length - 1;
+                let red = $(`.goodsList>ul>li:eq(${liLength})`).css("display");
+                if (red == "block") {
+                    $(".more").css("display", "none")
+                }
+            })
+        }
+    });
 })
