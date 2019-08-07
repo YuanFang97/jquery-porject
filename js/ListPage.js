@@ -208,7 +208,7 @@ $(function () {
                 return `
                 <li class="${ele.id}">
                     <span>
-                        <a href="./DetailPage.html?id=${ele.id}">
+                        <a href="./DetailPage.html?cate=${ele.classify}&id=${ele.id}">
                             <img src="${ele.imgurl}" alt="">
                         </a>
                     </span>
