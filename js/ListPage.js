@@ -1,8 +1,8 @@
 $(function () {
     let url = window.location.search;
     let urlCate = url.substr(8, 1) - 1;
-    let attr = ["新鲜水果","绿色菜篮","粮油调料","干货特产","零食饮料","美酒名茶","礼品礼券","家具厨卫","创意家电"];
-    let attrColor = ["#76b003","#30B633","#e0a63b","#da9166","#27beaf","#64b0c0","#d864d3","#8351ce","#6494e8"]
+    let attr = ["新鲜水果", "绿色菜篮", "粮油调味", "干货特产", "零食饮料", "美酒名茶", "礼品礼券", "家具厨卫", "创意家电"];
+    let attrColor = ["#76b003", "#30B633", "#e0a63b", "#da9166", "#27beaf", "#64b0c0", "#d864d3", "#8351ce", "#6494e8"]
     let res = attr[urlCate];
     // 头部轮播图自动切换
     let headCarousel = function () {
@@ -111,7 +111,7 @@ $(function () {
         }
     })
     // 根据url数据改变页面标签内容和样式
-    $(`.main-topNav>ul>li:eq(${urlCate})`).css("background-color",`${attrColor[urlCate]}`);
+    $(`.main-topNav>ul>li:eq(${urlCate})`).css("background-color", `${attrColor[urlCate]}`);
     $(".goods-leftNav>p>a:eq(1)").text(res);
     $(".leftNav>h3").text(res);
     // 渲染左侧导航数据
@@ -121,7 +121,7 @@ $(function () {
         dataType: "json",
         success: function (response) {
             let data = response[urlCate].data;
-            var res = data.map(ele => {
+            let res = data.map(ele => {
                 return `
                 <li>
                     <h4>${ele.title}</h4>
@@ -144,12 +144,34 @@ $(function () {
         }
     });
     // 渲染内容头部二级导航
-    $.ajax({
-        type: "post",
-        url: "../public/nav.json",
-        dataType: "dataType",
-        success: function (response) {
-            
-        }
-    });
+    $(".main-topNav>ul>li").mouseover(function () {
+        let index = jQuery.inArray($(this).text(), attr);
+        $.ajax({
+            type: "post",
+            url: "../public/nav.json",
+            dataType: "json",
+            success: function (response) {
+                let data = response[index].data;
+                let res = data.map(ele => {
+                    return `
+                    <dl>
+                    <dt>
+                        <h4>${ele.title}</h4>
+                    </dt>
+                    <dd>
+                        <a href="">${ele.list[0]}</a>
+                        <a href="">${ele.list[1]}</a>
+                        <a href="">${ele.list[2]}</a>
+                        <a href="">${ele.list[3]}</a>
+                        <a href="">${ele.list[4]}</a>
+                        <a href="">${ele.list[5]}</a>
+                    </dd>
+                </dl>
+                    `
+                }).join("");
+                $(".nav-none").html(res);
+                $("a:contains(undefined)").remove();
+            }
+        });
+    })
 })
