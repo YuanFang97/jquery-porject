@@ -3,9 +3,9 @@
 
     $con = mysqli_connect("127.0.0.1","root","","jquery-porject");
 
-    $urlID = $_REQUEST["urlID"];
+    $classify = $_REQUEST["classify"];
 
-    $sql = "SELECT * FROM  `goods-list` WHERE  `id` =$urlID";
+    $sql = "SELECT * FROM  `goods-list` WHERE  `classify` =$classify LIMIT 0 , 9";
 
     $result = mysqli_query($con,$sql);
 

@@ -1,9 +1,47 @@
 $(function () {
     let url = window.location.search;
     let urlCate = url.substr(6, 1) - 1;
+    let urlId = url.substr(11, 13);
     let attr = ["新鲜水果", "绿色菜篮", "粮油调味", "干货特产", "零食饮料", "美酒名茶", "礼品礼券", "家具厨卫", "创意家电"];
     let attrColor = ["#76b003", "#30B633", "#e0a63b", "#da9166", "#27beaf", "#64b0c0", "#d864d3", "#8351ce", "#6494e8"]
     let res = attr[urlCate];
+    // 发送ajax获取商品信息
+    $.ajax({
+        type: "post",
+        url: "../php/DetailPage.php",
+        data: `urlID=${urlId}`,
+        dataType: "json",
+        success: function (response) {
+            let num = parseInt((response[0].price).substr(1,5));
+            $(".main-box>h3").html(`${response[0].title}<span>${response[0].explain}</span>`);
+            $(".price>.l>em").text(`${response[0].price}`);
+            $(".price>.l>i").text(`${num+num*0.5}`);
+            $(".exzoom_img_ul>li>img").attr("src",`${response[0].imgurl}`)
+        }
+    });
+    // 获取推荐商品
+    $.ajax({
+        type: "post",
+        url: "../php/NewDetail.php",
+        data: `classify=${urlCate + 1}`,
+        dataType: "json",
+        success: function (response) {
+            let newlist = response.map(ele => {
+                return `
+                <div class="list">
+                <a href=""><img src="${ele.imgurl}"
+                        alt=""></a>
+                <em>${ele.price}</em>
+            </div>
+                `
+            }).join("");
+            $(".slider_four_in_line").html(newlist);
+            $('.slider_four_in_line').EasySlides({
+                'autoplay': true,
+                'show': 9
+            })
+        }
+    });
     // 头部轮播图自动切换
     let headCarousel = function () {
         setInterval(function () {
@@ -112,8 +150,5 @@ $(function () {
     $('.slider_one_big_picture').EasySlides({
         'autoplay': true,
     });
-    $('.slider_four_in_line').EasySlides({
-        'autoplay': true,
-        'show': 9
-    })
+    
 })
