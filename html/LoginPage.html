@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/LoginPage.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/captcha.js"></script>
+    <script src="../js/LoginPage.js"></script>
+</head>
+
+<body>
+    <div id="index">
+        <div class="bbox"></div>
+        <div class="box">
+            <h1></h1>
+            <div class="one-div">
+                <p>登入</p>
+                <p>还没有账号？<a href="./RegistrationPage.html">注册</a></p>
+            </div>
+            <div class="phone input">
+                <p><img src="../images/registration/register_01.png" alt=""></p>
+                <input type="text" placeholder="请输入手机号">
+            </div>
+            <span class="spnaPhone"></span>
+            <div class="password input">
+                <p><img src="../images/registration/register_02.png" alt=""></p>
+                <input type="password" placeholder="请输入密码">
+            </div>
+            <span class="spanPassword"></span>
+            <div class="yzm input">
+                <span>验证码</span>
+                <input type="text" placeholder="请输入验证码">
+                <canvas width="200" height="50" id="captcha1"></canvas>
+            </div>
+            <span class="yzm"></span>
+            <div class="protocol">
+                <input type="checkbox" name="like" value="0">
+                <i>记住我</i>
+                <a href="">忘记密码？</a>
+            </div>
+            <a href="" class="submit">登录</a>
+            <img src="../images/registration/admin-login-san.png" alt="">
+            <div class="san">
+                <a href=""><img src="../images/registration/login_dou.png" alt=""></a>
+                <a href=""><img src="../images/registration/login_qq.png" alt=""></a>
+                <a href=""><img src="../images/registration/login_sina.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

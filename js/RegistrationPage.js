@@ -4,6 +4,8 @@
      var passwordres = "flase";
      var note = "flase";
      var notenum = "";
+     var yhm = "";
+     var mm = "";
      $(".phone>input").blur(function () {
          let phone = $(this).val();
          if (!(/^1[3456789]\d{9}$/.test(phone))) {
@@ -18,11 +20,12 @@
              $(".phone").css("background", "url(../images/registration/login_right.png) no-repeat 440px 8px");
              $(".spnaPhone").css("background", "none").text("");
              phonetf = true;
+             yhm = $(this).val();
          }
      });
      $(".note>input").blur(function () {
-         let notenum = $(this).val();
-         if (notenum == notenum && notenum.length != 0) {
+         let notenums = $(this).val();
+         if (notenums == notenum && notenum.length != 0) {
              $(".note").css("background", "url(../images/registration/login_right.png) no-repeat 440px 8px");
              $(".spanNote").css("background", "none").text("");
              note = true;
@@ -66,6 +69,7 @@
              $(".passwordres").css("background", "url(../images/registration/login_right.png) no-repeat 440px 8px");
              $(".spnaRes").css("background", "none").text("");
              passwordres = true;
+             mm = $(".password>input").val();
          } else {
              $(".passwordres").css("background", "url(../images/registration/login_right.png) no-repeat 440px -35px");
              $(".spnaRes").css({
@@ -78,12 +82,34 @@
      });
      $(".submit").click(function () {
          let checkbox = $("input[type='checkbox']").is(':checked');
-         console.log(phonetf,password,passwordres,note,checkbox);
-         
-         if(phonetf == true && password == true && passwordres == true && note == true && checkbox == true){
-             
-         }else{
-             alert("请验证")
+         if (phonetf == true && password == true && passwordres == true && note == true && checkbox == true) {
+             //  console.log(username);
+             $.ajax({
+                 type: "post",
+                 url: "../php/TextUsername.php",
+                 data: `username=${yhm}`,
+                 dataType: "json",
+                 success: function (response) {
+                     if (response.length != 0) {
+                         alert("对不起，该用户已注册");
+                         $("input").val("");
+                     } else {
+                         $.ajax({
+                             type: "post",
+                             url: "../php/RegistrationPage.php",
+                             data: `username=${yhm}&password=${mm}`,
+                             dataType: "json",
+                             success: function (response) {
+                                 console.log(response);
+                                 alert("注册成功，请点击跳转登录");
+                                 window.location.href = "./LoginPage.html";
+                             }
+                         });
+                     }
+                 }
+             });
+         } else {
+             alert("输入有误，请重新输入")
          }
          return false;
      })
