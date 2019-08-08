@@ -8,11 +8,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/edslider.css">
-    <link rel="stylesheet" href="../css/jquery.gScrollingCarousel.css">
+    <link rel="stylesheet" href="../css/jquery.exzoom.css">
+    <link rel="stylesheet" href="../css/jquery.easy_slides.css">
     <link rel="stylesheet" href="../css/../css/DetailPage.css">
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/jquery.edslider.js"></script>
-    <script src="../js/jquery.gScrollingCarousel.js"></script>
+    <script src="../js/jquery.exzoom.js"></script>
+    <script src="../js/jquery.easy_slides.js"></script>
     <script src="../js/DetailPage.js"></script>
 </head>
 
@@ -171,26 +173,300 @@
             <div class="content-list">
                 <div class="main">
                     <div class="left-box">
-                        <div class="big">
-                            <img src="http://oss.egu365.com/upload/3204bpm35Wb84R7181Fo8103.jpg" alt="">
-                            <i></i>
+                        <div class="exzoom" id="exzoom">
+                            <!--大图区域-->
+                            <div class="exzoom_img_box">
+                                <ul class="exzoom_img_ul">
+                                    <li><img src="http://oss.egu365.com/upload/3204bpm35Wb84R7181Fo8103.jpg" /></li>
+                                    <li><img src="http://oss.egu365.com/upload/4274bpm35Wb84R7181Fo8103.jpg" /></li>
+                                    <li><img src="http://oss.egu365.com/upload/6172bpm35Wb84R7181Fo8103.jpg" /></li>
+                                    <li><img src="http://oss.egu365.com/upload/5416bpm35Wb84R7181Fo8103.jpg" /></li>
+                                    <li><img src="http://oss.egu365.com/upload/3203bpm35Wb84R7181Fo8103.jpg" /></li>
+                                    <li><img src="http://oss.egu365.com/upload/6325bpm35Wb84R7181Fo8103.jpg" /></li>
+                                </ul>
+                            </div>
+                            <!--缩略图导航-->
+                            <div class="exzoom_nav"></div>
+                            <!--控制按钮-->
+                            <p class="exzoom_btn">
+                                <a href="javascript:void(0);" class="exzoom_prev_btn">
+                                    < </a> <a href="javascript:void(0);" class="exzoom_next_btn"> >
+                                </a>
+                            </p>
                         </div>
-                        <div class="some">
-                            <div class="g-scrolling-carousel">
-                                <div class="items">
-                                    <img src="http://oss.egu365.com/upload/3204bpm35Wb84R7181Fo8103.jpg" alt="">
-                                    <img src="http://oss.egu365.com/upload/4274bpm35Wb84R7181Fo8103.jpg" alt="">
-                                    <img src="http://oss.egu365.com/upload/6172bpm35Wb84R7181Fo8103.jpg" alt="">
-                                    <img src="http://oss.egu365.com/upload/5416bpm35Wb84R7181Fo8103.jpg" alt="">
-                                    <img src="http://oss.egu365.com/upload/3203bpm35Wb84R7181Fo8103.jpg" alt="">
-                                    <img src="http://oss.egu365.com/upload/6325bpm35Wb84R7181Fo8103.jpg" alt="">
+                    </div>
+                    <div class="main-box">
+                        <div class="none"></div>
+                        <h3>
+                            依谷精品吉祥三宝甜椒450g
+                            <span>鲜甜清香 个硕大肉厚实 口感味甜 配菜佳选</span>
+                        </h3>
+                        <dl class="price">
+                            <dt>价格</dt>
+                            <dd class="l">
+                                <em>￥<font>16.6</font></em>
+                                [￥<i>18.8</i>]
+                            </dd>
+                            <dt>运费</dt>
+                            <dd class="m">
+                                全场满199元包邮，单笔不足运费8元起，生鲜类仅限深圳同城！
+                            </dd>
+                            <dt>配送</dt>
+                            <dd class="r">
+                                <select>
+                                    <option value="深圳市">深圳市</option>
+                                </select>
+                            </dd>
+                        </dl>
+                        <dl class="peis">
+                            <dt>时 效</dt>
+                            <dd>当日16：00前下单，次日送货上门(仅限深圳同城)！</dd>
+                            <dt>提 示</dt>
+                            <dd>产品图片及其描述仅作参考，请您以收到的实物为准！</dd>
+                            <dt>理 赔</dt>
+                            <dd>收货后商品如有损坏，请您当场拍下图片，并保留相关商品，在24小时之内及时联系售后客服，以便我们给您更换完好的商品！如非质量问题，概不退换！</dd>
+                        </dl>
+                        <dl class="gg">
+                            <dt>规 格</dt>
+                            <dd>
+                                <ul>
+                                    <li class="c" style="font-size: 10px;">450g</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="shop-box">
+                            <span>收藏</span>
+                            <div class="cp-btnbox">
+                                <ul>
+                                    <li>
+                                        <span>+</span>
+                                        <span>-</span>
+                                    </li>
+                                    <li>
+                                        <input value="1">
+                                    </li>
+                                </ul>
+                                <a>加入购物车</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <p>买了又买</p>
+                        <div class="slider slider_one_big_picture">
+                            <div class="box">
+                                <div>
+                                    <a href=""><img src="http://oss.egu365.com/upload/20180903190123015.jpg" alt=""></a>
+                                    <a href="" class="hover-red">美心流心奶黄月饼360g</a>
+                                    <em>￥328</em>
+                                </div>
+                                <div>
+                                    <a href=""><img src="http://oss.egu365.com/upload/201808111937922053.jpg"
+                                            alt=""></a>
+                                    <a href="" class="hover-red">Amalee燕窝流心奶黄月</a>
+                                    <em>￥298</em>
+                                </div>
+                                <div>
+                                    <a href=""><img
+                                            src="http://oss.egu365.com/upload/69e8d068e2a744c7bdd6f6f4fae880e1.jpg"
+                                            alt=""></a>
+                                    <a href="" class="hover-red">美心丰年美月月饼420g</a>
+                                    <em>￥195</em>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="box">
+                                    <div>
+                                        <a href=""><img src="http://oss.egu365.com/upload/20180903190123015.jpg"
+                                                alt=""></a>
+                                        <a href="" class="hover-red">成都龙泉驿无花果1.5kg</a>
+                                        <em>￥88</em>
+                                    </div>
+                                    <div>
+                                        <a href=""><img src="http://oss.egu365.com/upload/201808111937922053.jpg"
+                                                alt=""></a>
+                                        <a href="" class="hover-red">吉利莲吉馨牛奶巧克力制品礼</a>
+                                        <em>￥99</em>
+                                    </div>
+                                    <div>
+                                        <a href="" class="hover-red"><img
+                                                src="http://oss.egu365.com/upload/69e8d068e2a744c7bdd6f6f4fae880e1.jpg"
+                                                alt=""></a>
+                                        <a href="">暇の选湖南精选野山核桃仁2</a>
+                                        <em>￥72.5</em>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="main-box">
-                        
+                </div>
+            </div>
+        </div>
+        <div id="recommend">
+            <div class="content-list">
+                <div class="recommend">
+                    <div class="title">
+                        <p>依谷推荐</p>
                     </div>
+                    <div class="recommend-goods">
+                        <div class="slider slider_four_in_line">
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="list">
+                                <a href=""><img src="http://oss.egu365.com/upload/1546KF820hK266s3250G3SVX.jpg"
+                                        alt=""></a>
+                                <em>￥33.7</em>
+                            </div>
+                            <div class="next_button"></div>
+                            <div class="prev_button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="img">
+            <div class="content-list">
+                <img src="../images/detailpage/tl.gif" alt="">
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-top">
+                <div class="content">
+                    <ul>
+                        <li>
+                            <strong>基地直供 冷链直达</strong>
+                            <p>
+                                优选蔬果，从基地到餐桌<br>
+                                全程冷链直达
+                            </p>
+                        </li>
+                        <li>
+                            <strong>同城快递 次日直达</strong>
+                            <p>
+                                当天16点前下单<br>
+                                第二天送达（限深圳同城）
+                            </p>
+                        </li>
+                        <li>
+                            <strong>在线支付 灵活便利</strong>
+                            <p>
+                                多样化支付方式，更便捷<br>
+                                省时省心
+                            </p>
+                        </li>
+                        <li>
+                            <strong>退换无忧 服务保障</strong>
+                            <p>
+                                24小时退换货，流程通畅无阻<br>
+                                省时省心
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="footer-main">
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd><a href="" class="hover-red">配送时间</a></dd>
+                        <dd><a href="" class="hover-red">套餐卡使用方法</a></dd>
+                        <dd><a href="" class="hover-red">谷穗卡使用方法</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>付款方式</dt>
+                        <dd><a href="" class="hover-red">线上支付</a></dd>
+                        <dd><a href="" class="hover-red">发票说明</a></dd>
+                        <dd><a href="" class="hover-red">余额支付</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>商品配送</dt>
+                        <dd><a href="" class="hover-red">买家自取</a></dd>
+                        <dd><a href="" class="hover-red">配送时间</a></dd>
+                        <dd><a href="" class="hover-red">冷链配送</a></dd>
+                        <dd><a href="" class="hover-red">送货范围及费用</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd><a href="" class="hover-red">签收与评价</a></dd>
+                        <dd><a href="" class="hover-red">常见问题</a></dd>
+                        <dd><a href="" class="hover-red">退换货说明</a></dd>
+                        <dd><a href="" class="hover-red">品质保障</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>求真依谷</dt>
+                        <dd><a href="" class="hover-red">慈善公益</a></dd>
+                        <dd><a href="" class="hover-red">依谷资讯</a></dd>
+                        <dd><a href="" class="hover-red">招贤纳士</a></dd>
+                        <dd><a href="" class="hover-red">关于我们</a></dd>
+                    </dl>
+                    <div>
+                        <h3>依谷微信</h3>
+                        <img src="../images/homepage/index-bottom-ygw-wx.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-buttom">
+                <div class="content">
+                    <p class="top">
+                        <a href="" class="hover-red">关于依谷</a>
+                        <a href="" class="hover-red">加入依谷</a>
+                        <a href="" class="hover-red">联系依谷</a>
+                        <a href="" class="hover-red">免责声明</a>
+                        <a href="" class="hover-red">依谷咨询</a>
+                        <a href="" class="hover-red">网站地图</a>
+                        <a href="" class="hover-red">客服在线</a>
+                    </p>
+                    <p class="main">
+                        <a href=""><img src="../images/homepage/dzswsfqy.png" alt=""></a>
+                        <a href=""><img src="../images/homepage/kxwz.jpg" alt=""></a>
+                        <a href=""><img src="../images/homepage/xfwq.jpg" alt=""></a>
+                        <a href=""><img src="../images/homepage/zmpp.jpg" alt=""></a>
+                        <a href=""><img src="../images/homepage/spltxkz.png" alt=""></a>
+                        <a href=""><img src="../images/homepage/govIcon.gif" alt=""></a>
+                    </p>
+                    <p class="buttom">
+                        Copyright © 2010-2019 所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。<br>
+                        <a href="" class="hover-red">粤ICP备19014370号-2</a>
+                        | All Rights Reserved 深圳依谷网版权所有 网络实名：
+                        <a href="" class="hover-red">依谷网</a>
+                    </p>
                 </div>
             </div>
         </div>

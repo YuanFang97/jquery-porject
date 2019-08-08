@@ -107,9 +107,13 @@ $(function () {
         });
     });
     // 左侧img插件
-    $(".g-scrolling-carousel .items").gScrollingCarousel();
-    $(".g-scrolling-carousel>.items>img").mouseenter(function(){
-        $(".left-box>.big>img").attr("src",$(this).attr("src"));
+    $("#exzoom").exzoom();
+    // 右侧轮播插件
+    $('.slider_one_big_picture').EasySlides({
+        'autoplay': true,
+    });
+    $('.slider_four_in_line').EasySlides({
+        'autoplay': true,
+        'show': 9
     })
-    // 
 })
