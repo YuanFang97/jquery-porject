@@ -1,4 +1,37 @@
 $(function () {
+    // 
+    let status = localStorage.getItem("username");
+    if (status == null) {
+        $(".shopping").click(function () {
+            alert("对不起，请先登入！")
+            return false;
+        })
+    } else {
+        $(".head-nav>.right>ul>li:eq(0)>a").text(status);
+        $(".head-nav>.right>ul>li:eq(1)>a").text("退出");
+        $(".head-nav>.right>ul>li:eq(0)>a").click(function () {
+            return false;
+        })
+        $(".head-nav>.right>ul>li:eq(1)>a").click(function () {
+            localStorage.clear();
+            alert("已退出！");
+            location.reload();
+            return false;
+        });
+    }
+    // 
+    // 
+    $.ajax({
+        type: "post",
+        url: "../php/gerenSP.php",
+        data: `username=${status}`,
+        dataType: "json",
+        success: function (response) {
+            $($(".shopping")[1]).siblings("p").text(response.length);
+            $($(".shopping")[2]).find("p").text(response.length);
+        }
+    });
+    // 
     let url = window.location.search;
     let urlCate = url.substr(6, 1) - 1;
     let urlId = url.substr(11, 13);
@@ -12,11 +45,11 @@ $(function () {
         data: `urlID=${urlId}`,
         dataType: "json",
         success: function (response) {
-            let num = parseInt((response[0].price).substr(1,5));
+            let num = parseInt((response[0].price).substr(1, 5));
             $(".main-box>h3").html(`${response[0].title}<span>${response[0].explain}</span>`);
             $(".price>.l>em").text(`${response[0].price}`);
             $(".price>.l>i").text(`${num+num*0.5}`);
-            $(".exzoom_img_ul>li>img").attr("src",`${response[0].imgurl}`)
+            $(".exzoom_img_ul>li>img").attr("src", `${response[0].imgurl}`)
         }
     });
     // 获取推荐商品
@@ -150,5 +183,64 @@ $(function () {
     $('.slider_one_big_picture').EasySlides({
         'autoplay': true,
     });
-    
+    // 
+    $(".cp-btnbox>ul>li:eq(0)>span:eq(0)").click(function () {
+        let val = parseInt($(".cp-btnbox>ul>li:eq(1)>input").val());
+        val = val + 1;
+        $(".cp-btnbox>ul>li:eq(1)>input").val(val);
+    })
+    $(".cp-btnbox>ul>li:eq(0)>span:eq(1)").click(function () {
+        let val = parseInt($(".cp-btnbox>ul>li:eq(1)>input").val());
+        if (val > 1) {
+            val = val - 1;
+            $(".cp-btnbox>ul>li:eq(1)>input").val(val);
+        } else {
+            $(".cp-btnbox>ul>li:eq(1)>input").val("1");
+        }
+    })
+    //
+    $(".click").click(function () {
+        if (status == null) {
+            alert("请登录！");
+            return false;
+        } else {
+            let imgurl = $(".current").find("img").attr("src");
+            let title = ($(".main-box").find("h3").html()).split('<span>')[0];
+            let price = $(".price>.l>em").text();
+            let quantity = $(".cp-btnbox>ul>li:eq(1)>input").val();
+            let id = urlId;
+            $.ajax({
+                type: "post",
+                url: "../php/gerenSP.php",
+                data: `username=${status}`,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    let splength = response.length;
+                    if (response.length > 9) {
+                        console.log(response.length);
+                        alert("对不起，购物车已满");
+                    } else {
+                        console.log(response.length);
+
+                        $.ajax({
+                            type: "post",
+                            url: "../php/shangpingtianjia.php",
+                            data: `username=${status}&id=${id}&quantity=${quantity}&imgurl=${imgurl}&title=${title}&price=${price}`,
+                            dataType: "json",
+                            success: function (response) {
+                                alert("添加购物车成功");
+                                console.log(response);
+                                $($(".shopping")[1]).siblings("p").text(splength + 1);
+                                $($(".shopping")[2]).find("p").text(splength + 1);
+                            }
+                        });
+                    }
+                }
+            });
+            return false;
+        }
+    })
+    // 
+
 })

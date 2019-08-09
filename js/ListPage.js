@@ -1,4 +1,37 @@
 $(function () {
+    // 
+    let status = localStorage.getItem("username");
+    if (status == null) {
+        $(".shopping").click(function () {
+            alert("对不起，请先登入！")
+            return false;
+        })
+    } else {
+        $(".head-nav>.right>ul>li:eq(0)>a").text(status);
+        $(".head-nav>.right>ul>li:eq(1)>a").text("退出");
+        $(".head-nav>.right>ul>li:eq(0)>a").click(function () {
+            return false;
+        })
+        $(".head-nav>.right>ul>li:eq(1)>a").click(function () {
+            localStorage.clear();
+            alert("已退出！");
+            location.reload();
+            return false;
+        });
+    }
+    // 
+    //
+    $.ajax({
+        type: "post",
+        url: "../php/gerenSP.php",
+        data: `username=${status}`,
+        dataType: "json",
+        success: function (response) {
+            $($(".shopping")[1]).siblings("p").text(response.length);
+            $($(".shopping")[2]).find("p").text(response.length);
+        }
+    });
+    //
     let url = window.location.search;
     let urlCate = url.substr(8, 1) - 1;
     let attr = ["新鲜水果", "绿色菜篮", "粮油调味", "干货特产", "零食饮料", "美酒名茶", "礼品礼券", "家具厨卫", "创意家电"];
@@ -226,15 +259,15 @@ $(function () {
                     </p>
                     <div>
                         <div>
-                            <a href="">
+                            <a href="" class="jian">
                                 <i>-</i>
                             </a>
-                            <input value="1" maxlength="2">
-                            <a href="">
+                            <input value="1" maxlength="2" min="0">
+                            <a href="" class="jia">
                                 <i>+</i>
                             </a>
                         </div>
-                        <a href="" class="hover-green">加入购物车</a>
+                        <a href="" class="hover-green click">加入购物车</a>
                     </div>
                 </li>
             
@@ -251,6 +284,65 @@ $(function () {
                 let red = $(`.goodsList>ul>li:eq(${liLength})`).css("display");
                 if (red == "block") {
                     $(".more").css("display", "none")
+                }
+            })
+            // 
+            $(".jia").click(function () {
+                let inputval = parseInt($(this).siblings("input").val());
+                inputval = inputval + 1;
+                $(this).siblings("input").val(inputval);
+                return false;
+            })
+            $(".jian").click(function () {
+                let inputval = parseInt($(this).siblings("input").val());
+                if (inputval > 1) {
+                    inputval = inputval - 1;
+                    $(this).siblings("input").val(inputval);
+                    return false;
+                } else {
+                    $(this).siblings("input").val("1");
+                    return false;
+                }
+            })
+            $(".click").click(function () {
+                if (status == null) {
+                    alert("请登录！");
+                    return false;
+                } else {
+                    let imgurl = $($(this).parent("div").siblings("span")[0]).find("a").find("img").attr("src");
+                    let title = $($(this).parent("div").siblings("span")[2]).find("a").text();
+                    let price = $($(this).parent("div").siblings("span")[1]).find("em").text();
+                    let quantity = $(this).siblings("div").find("input").val();
+                    let id = $(this).parent("div").parent("li").attr("class");
+                    $.ajax({
+                        type: "post",
+                        url: "../php/gerenSP.php",
+                        data: `username=${status}`,
+                        dataType: "json",
+                        success: function (response) {
+                            let splength = response.length;
+                            if (response.length > 9) {
+                                console.log(response.length);
+                                alert("对不起，购物车已满");
+                            } else {
+                                console.log(response.length);
+
+                                $.ajax({
+                                    type: "post",
+                                    url: "../php/shangpingtianjia.php",
+                                    data: `username=${status}&id=${id}&quantity=${quantity}&imgurl=${imgurl}&title=${title}&price=${price}`,
+                                    dataType: "json",
+                                    success: function (response) {
+                                        alert("添加购物车成功");
+                                        console.log(response);
+                                        $($(".shopping")[1]).siblings("p").text(splength + 1);
+                                        $($(".shopping")[2]).find("p").text(splength + 1);
+                                    }
+                                });
+                            }
+                        }
+                    });
+                    return false;
                 }
             })
         }

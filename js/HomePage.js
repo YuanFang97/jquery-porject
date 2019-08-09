@@ -1,4 +1,36 @@
 $(function () {
+    let status = localStorage.getItem("username");
+    if (status == null) {
+        $(".shopping").click(function () {
+            alert("对不起，请先登入！")
+            return false;
+        })
+    } else {
+        $(".head-nav>.right>ul>li:eq(0)>a").text(status);
+        $(".head-nav>.right>ul>li:eq(1)>a").text("退出");
+        $(".head-nav>.right>ul>li:eq(0)>a").click(function () {
+            return false;
+        })
+        $(".head-nav>.right>ul>li:eq(1)>a").click(function () {
+            localStorage.clear();
+            alert("已退出！");
+            location.reload();
+            return false;
+        });
+    }
+    // 
+    $.ajax({
+        type: "post",
+        url: "../php/gerenSP.php",
+        data: `username=${status}`,
+        dataType: "json",
+        success: function (response) {
+            console.log(response.length);
+            $($(".shopping")[1]).siblings("p").text(response.length);
+            $($(".shopping")[2]).find("p").text(response.length);
+        }
+    });
+    // 
     // 头部轮播图自动切换
     let headCarousel = function () {
         setInterval(function () {
@@ -90,7 +122,7 @@ $(function () {
         } else if (height >= 8448 && height < 9150) {
             $("[href='#ht_09.jpg']").parents("li").css("background", "#6494e8");
             $("[href='#ht_09.jpg']").parents("li").siblings().css("background", "#b7b5b5");
-        }else if (height >= 9150) {
+        } else if (height >= 9150) {
             $("#floor>ul>li").css("background", "#b7b5b5");
         }
     })
